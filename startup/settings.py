@@ -23,10 +23,10 @@ import dj_database_url
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = ['*']
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DATABASE_URL = { 'default': dj_database_url.config() }
+# DATABASE_URL = { 'default': dj_database_url.config() }
+ALLOWED_HOSTS = ['*']
 
 DEBUG=config('DEBUG',cast=bool )
 
@@ -84,6 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': dj_database_url.config(default='postgres://zmiuogawfthykq:5120a498f9da3efc3b613a55c7b3652b7034059a7d8b881d92033c1390a22b3b@ec2-54-227-237-27.compute-1.amazonaws.com:5432/dbki60s02qdasi')
     }
 }
 
