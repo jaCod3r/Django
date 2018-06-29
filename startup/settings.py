@@ -81,17 +81,19 @@ WSGI_APPLICATION = 'startup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'default': dj_database_url.config(default='postgres://zmiuogawfthykq:5120a498f9da3efc3b613a55c7b3652b7034059a7d8b881d92033c1390a22b3b@ec2-54-227-237-27.compute-1.amazonaws.com:5432/dbki60s02qdasi')
+#     }
+# }
+
+# DATABASES['default'] = dj_database_url.config(default='postgres://zmiuogawfthykq:5120a498f9da3efc3b613a55c7b3652b7034059a7d8b881d92033c1390a22b3b@ec2-54-227-237-27.compute-1.amazonaws.com:5432/dbki60s02qdasi')
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'default': dj_database_url.config(default='postgres://zmiuogawfthykq:5120a498f9da3efc3b613a55c7b3652b7034059a7d8b881d92033c1390a22b3b@ec2-54-227-237-27.compute-1.amazonaws.com:5432/dbki60s02qdasi')
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
 }
-
-DATABASES['default'] = dj_database_url.config(default='postgres://...')
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
