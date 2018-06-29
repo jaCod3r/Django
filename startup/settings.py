@@ -30,8 +30,6 @@ DATABASE_URL = { 'default': dj_database_url.config() }
 
 DEBUG=config('DEBUG',cast=bool )
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
